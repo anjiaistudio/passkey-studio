@@ -38,7 +38,7 @@ import PlaygroundAuthenticationPage from
 export default function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<AdminLayout />}>
           <Route index element={<Navigate to="/analytics/overview" replace />} />
@@ -81,6 +81,7 @@ export default function App() {
           <Route path="playground/credentials/:id" element={<PlaygroundInspectorDetailPage />} />
           <Route path="playground/capabilities" element={<PlaygroundCapabilitiesPage />} />
           <Route path="settings" element={<SettingsPage />} />
+          <Route path="*" element={<Navigate to="/analytics/overview" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
