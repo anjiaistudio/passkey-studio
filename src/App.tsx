@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Navigate,
   Routes,
   Route,
@@ -38,7 +38,7 @@ import PlaygroundAuthenticationPage from
 export default function App() {
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route element={<AdminLayout />}>
           <Route index element={<Navigate to="/analytics/overview" replace />} />
@@ -84,6 +84,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/analytics/overview" replace />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
